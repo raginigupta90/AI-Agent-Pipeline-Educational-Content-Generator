@@ -55,6 +55,7 @@ Output (Structured)
     }
   ]
 }
+```
 Key Features
 Language adjusted to the student’s grade level
 
@@ -80,6 +81,7 @@ Output (Structured)
     "Specific feedback messages"
   ]
 }
+
 Refinement Logic
 If the Reviewer Agent returns fail, the Generator Agent is re-run once
 
