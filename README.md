@@ -57,7 +57,8 @@ Output (Structured):
     }
   ]
 }
-Key Characteristics:
+
+##Key Characteristics:
 
 Grade-appropriate language
 
@@ -66,7 +67,8 @@ Conceptually correct content
 Deterministic output structure
 
 Reviewer Agent
-Responsibility:
+
+##Responsibility:
 Evaluates the generated content for quality and suitability.
 
 Evaluation Criteria:
@@ -77,7 +79,7 @@ Conceptual correctness
 
 Clarity of explanation
 
-Output (Structured):
+**Output (Structured):**
 
 {
   "status": "pass | fail",
@@ -85,14 +87,17 @@ Output (Structured):
     "Specific feedback messages"
   ]
 }
-Refinement Logic
+
+##Refinement Logic
+
 If the Reviewer Agent returns fail, the Generator Agent is re-run once.
 
 Reviewer feedback is embedded into the second generation.
 
 Only one refinement pass is allowed.
 
-Command-Line UI
+##Command-Line UI
+
 The CLI:
 
 Triggers the full agent pipeline
@@ -103,7 +108,7 @@ Generator output
 
 Reviewer feedback
 
-Refined output (if applicable)
+Refined output
 
 Makes the agent flow explicit and easy to follow
 
@@ -114,7 +119,9 @@ AI-agent-pipeline/
 ├── reviewer_agent.py    # Reviewer Agent logic
 ├── main.py              # CLI UI and agent pipeline
 └── README.md
- How to Run (Windows CMD)
+
+##How to Run (Windows CMD)
+
 1️⃣ Open Command Prompt
 Win + R → cmd → Enter
 2️⃣ Navigate to Project Directory
@@ -130,14 +137,14 @@ Refinement is triggered if issues are found
 
 Final results are displayed in the terminal
 
-Technologies Used
+##Technologies Used
 Python 3.x
 
 Standard Python libraries (json)
 
 Windows Command Prompt (CMD)
 
- Design Rationale
+ ##Design Rationale
 Keeps the system simple and interpretable
 
 Clearly separates agent responsibilities
@@ -146,7 +153,7 @@ Demonstrates structured agent communication
 
 Fully aligns with agent-based AI assessment requirements
 
-Possible Extensions
+##Possible Extensions
 Support for multiple grades and topics
 
 Web-based UI using Streamlit or Flask
@@ -155,5 +162,5 @@ Logging and scoring mechanisms
 
 REST API version of the agent pipeline
 
-Author
+##Author
 Ragini Gupta
