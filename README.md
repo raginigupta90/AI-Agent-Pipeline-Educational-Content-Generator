@@ -1,48 +1,54 @@
-AI Agent Pipeline – Educational Content Generator
-Overview
+# AI Agent Pipeline – Educational Content Generator
 
-This project implements a lightweight agent-based AI pipeline to generate and review educational content for school students.
-It demonstrates how multiple AI agents can collaborate in a controlled workflow using structured inputs and outputs, without relying on heavy frameworks.
+A lightweight **agent-based AI pipeline** implemented in Python that generates and reviews educational content for school students.  
+The project demonstrates **agent collaboration**, **structured input/output**, and a **review–refine workflow**, all exposed through a simple **command-line interface (CLI)**.
 
-The system consists of:
+---
 
-A Generator Agent that creates draft educational content.
+##  Features
 
-A Reviewer Agent that evaluates the generated content.
+- Two clearly defined AI agents:
+  - **Generator Agent** – creates educational content
+  - **Reviewer Agent** – evaluates content quality
+- Structured JSON-based communication between agents
+- One-pass refinement logic based on reviewer feedback
+- Simple and transparent CLI-based UI
+- No external frameworks required
 
-A Command-Line UI that triggers the agent pipeline and displays each stage clearly.
+---
 
-The project is built using pure Python and is designed to run on Windows via Command Prompt (CMD).
+##  Agent Architecture
 
-Agent Architecture
-User (CLI UI)
-   ↓
+User (CLI)
+↓
 Generator Agent
-   ↓
+↓
 Reviewer Agent
-   ↓
-(Optional Refinement Pass)
-   ↓
-Final Output Display
+↓
+(Optional Refinement)
+↓
+Final Output
 
-Agents Description
-1. Generator Agent
 
-Responsibility:
-Generates draft educational content based on grade and topic.
+---
 
-Input (Structured):
+##  Agents Description
 
+### Generator Agent
+
+**Responsibility:**  
+Generates draft educational content for a given grade and topic.
+
+**Input (Structured):**
+```json
 {
   "grade": 4,
   "topic": "Types of angles"
 }
-
-
 Output (Structured):
 
 {
-  "explanation": "Text explanation...",
+  "explanation": "Explanation text",
   "mcqs": [
     {
       "question": "Question text",
@@ -51,20 +57,17 @@ Output (Structured):
     }
   ]
 }
+Key Characteristics:
 
+Grade-appropriate language
 
-Key Features:
+Conceptually correct content
 
-Language adjusted to the student’s grade level
+Deterministic output structure
 
-Correct academic concepts
-
-Deterministic JSON structure
-
-2. Reviewer Agent
-
+Reviewer Agent
 Responsibility:
-Evaluates the Generator Agent’s output.
+Evaluates the generated content for quality and suitability.
 
 Evaluation Criteria:
 
@@ -82,20 +85,17 @@ Output (Structured):
     "Specific feedback messages"
   ]
 }
-
 Refinement Logic
-
 If the Reviewer Agent returns fail, the Generator Agent is re-run once.
 
 Reviewer feedback is embedded into the second generation.
 
-Only one refinement pass is allowed, as per requirements.
+Only one refinement pass is allowed.
 
-User Interface (CLI)
+Command-Line UI
+The CLI:
 
-The project includes a command-line interface that:
-
-Triggers the agent pipeline
+Triggers the full agent pipeline
 
 Displays:
 
@@ -105,77 +105,55 @@ Reviewer feedback
 
 Refined output (if applicable)
 
-Clearly shows the agent flow
+Makes the agent flow explicit and easy to follow
 
-No external UI frameworks are used.
-
-Project Structure
-AI agent pipeline/
+📁 Project Structure
+AI-agent-pipeline/
 │
 ├── generator_agent.py   # Generator Agent logic
 ├── reviewer_agent.py    # Reviewer Agent logic
 ├── main.py              # CLI UI and agent pipeline
 └── README.md
-
-How to Run (Windows CMD)
-Step 1: Open Command Prompt
-
-Press:
-
+ How to Run (Windows CMD)
+1️⃣ Open Command Prompt
 Win + R → cmd → Enter
-
-Step 2: Navigate to Project Folder
+2️⃣ Navigate to Project Directory
 cd "C:\college\internship\INTERNSHIP TASK\AI agent pipeline"
-
-Step 3: Run the Program
+3️⃣ Run the Program
 python main.py
+Sample Execution Flow
+Generator Agent produces educational content
 
-Sample Output Flow
+Reviewer Agent evaluates the content
 
-Generator creates educational content
-
-Reviewer evaluates the content
-
-If issues are found, refinement is triggered
+Refinement is triggered if issues are found
 
 Final results are displayed in the terminal
 
 Technologies Used
-
 Python 3.x
 
 Standard Python libraries (json)
 
-Command Line Interface (CMD)
+Windows Command Prompt (CMD)
 
-Why This Design
+ Design Rationale
+Keeps the system simple and interpretable
 
-Keeps the system simple and transparent
+Clearly separates agent responsibilities
 
-Clearly demonstrates agent responsibilities
+Demonstrates structured agent communication
 
-Follows structured input/output contracts
-
-Meets all requirements of the AI agent assessment
-
-Notes
-
-No external AI frameworks were used.
-
-The focus is on agent logic and interaction, not model training.
-
-The project is intentionally lightweight and easy to extend.
+Fully aligns with agent-based AI assessment requirements
 
 Possible Extensions
-
 Support for multiple grades and topics
 
-Web UI using Streamlit or Flask
+Web-based UI using Streamlit or Flask
 
-Logging and scoring metrics
+Logging and scoring mechanisms
 
-REST API integration
+REST API version of the agent pipeline
 
 Author
-
 Ragini Gupta
