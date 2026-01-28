@@ -39,7 +39,7 @@ Generates draft educational content based on grade and topic.
 
 #### Input (Structured)
 
-```json
+```
 {
   "grade": 4,
   "topic": "Types of angles"
@@ -56,45 +56,44 @@ Output (Structured)
   ]
 }
 ```
-Key Features
+## Key Features
 Language adjusted to the student’s grade level
 
 Correct academic concepts
 
 Deterministic JSON structure
 
-2. Reviewer Agent
-Responsibility:
-Evaluates the Generator Agent’s output.
+### 2. Reviewer Agent
 
+**Responsibility:**
+Evaluates the Generator Agent’s output.
 Evaluation Criteria
 Age appropriateness
-
 Conceptual correctness
-
 Clarity of explanation
 
-Output (Structured)
+####Output (Structured)
+```
 {
   "status": "pass | fail",
   "feedback": [
     "Specific feedback messages"
   ]
 }
-
-Refinement Logic
+```
+## Refinement Logic
 If the Reviewer Agent returns fail, the Generator Agent is re-run once
 
 Reviewer feedback is embedded into the second generation
 
 Only one refinement pass is allowed, as per requirements
 
-User Interface (CLI)
+## User Interface (CLI)
 The project includes a command-line interface that:
 
 Triggers the agent pipeline
 
-Displays:
+## Displays:
 
 Generator output
 
@@ -106,14 +105,16 @@ Clearly shows the agent flow
 
 No external UI frameworks are used.
 
-Project Structure
+## Project Structure
+```
 AI agent pipeline/
 │
 ├── generator_agent.py   # Generator Agent logic
 ├── reviewer_agent.py    # Reviewer Agent logic
 ├── main.py              # CLI UI and agent pipeline
 └── README.md
-How to Run (Windows CMD)
+```
+## How to Run (Windows CMD)
 Step 1: Open Command Prompt
 Win + R → cmd → Enter
 Step 2: Navigate to Project Folder
@@ -121,6 +122,7 @@ cd "C:\college\internship\INTERNSHIP TASK\AI agent pipeline"
 Step 3: Run the Program
 python main.py
 Sample Output Flow
+
 Generator creates educational content
 
 Reviewer evaluates the content
@@ -129,14 +131,14 @@ If issues are found, refinement is triggered
 
 Final results are displayed in the terminal
 
-Technologies Used
+## Technologies Used
 Python 3.x
 
 Standard Python libraries (json)
 
 Command Line Interface (CMD)
 
-Why This Design
+## Why This Design
 Keeps the system simple and transparent
 
 Clearly demonstrates agent responsibilities
@@ -145,14 +147,14 @@ Follows structured input/output contracts
 
 Meets all requirements of the AI agent assessment
 
-Notes
+## Notes
 No external AI frameworks were used
 
 The focus is on agent logic and interaction, not model training
 
 The project is intentionally lightweight and easy to extend
 
-Possible Extensions
+## Possible Extensions
 Support for multiple grades and topics
 
 Web UI using Streamlit or Flask
@@ -161,5 +163,5 @@ Logging and scoring metrics
 
 REST API integration
 
-Author
+@Author
 Ragini Gupta
