@@ -40,14 +40,14 @@ Final Output
 **Responsibility:**  
 Generates draft educational content for a given grade and topic.
 
-**Input (Structured):**
+#### Input (Structured)
+
 ```json
 {
   "grade": 4,
   "topic": "Types of angles"
 }
-Output (Structured):
-
+Output (Structured)
 {
   "explanation": "Explanation text",
   "mcqs": [
@@ -58,8 +58,7 @@ Output (Structured):
     }
   ]
 }
-Key Characteristics:
-
+Key Characteristics
 Grade-appropriate language
 
 Conceptually correct content
@@ -70,16 +69,14 @@ Reviewer Agent
 Responsibility:
 Evaluates the generated content for quality and suitability.
 
-Evaluation Criteria:
-
+Evaluation Criteria
 Age appropriateness
 
 Conceptual correctness
 
 Clarity of explanation
 
-Output (Structured):
-
+Output (Structured)
 {
   "status": "pass | fail",
   "feedback": [
@@ -87,11 +84,11 @@ Output (Structured):
   ]
 }
 Refinement Logic
-If the Reviewer Agent returns fail, the Generator Agent is re-run once.
+If the Reviewer Agent returns fail, the Generator Agent is re-run once
 
-Reviewer feedback is embedded into the second generation.
+Reviewer feedback is embedded into the second generation
 
-Only one refinement pass is allowed.
+Only one refinement pass is allowed
 
 Command-Line UI
 The command-line interface:
